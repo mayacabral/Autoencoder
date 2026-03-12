@@ -1,7 +1,7 @@
-import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
 from tensorflow.keras import datasets, layers, models, callbacks
+from tensorflow.keras.datasets import fashion_mnist
 import tensorflow.keras.backend as K
 from utils import display
 
@@ -67,7 +67,7 @@ encoder = models.Model(encoder_input, encoder_output)
 decoder_input = layers.Input(shape=(2,), name="decoder_input")
 
 #2. conecta a entrada a camada densa
-x = layers.Dense(np.prod(shape_before_flattening))(decoder_input)
+x = layers.Dense(int(np.prod(shape_before_flattening)))(decoder_input)
 
 #3. Faz o reshape do vetor em um tensor que pode ser fornecido como entrada para primeira camada Convolucional
 x = layers.Reshape(shape_before_flattening)(x)
