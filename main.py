@@ -1,9 +1,8 @@
-from tensorflow.keras import datasets
+import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
-from tensorflow.keras import layers, models, callbacks
+from tensorflow.keras import datasets, layers, models, callbacks
 import tensorflow.keras.backend as K
-
 from utils import display
 
 
